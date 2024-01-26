@@ -39,18 +39,6 @@ const MainProvider = ({ children }) => {
     getCocktail();
   }, [category, suche]);
 
-  // useEffect(() => {
-  //   const getCocktail = async () => {
-  //     const response = await axios.get(
-  //       `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${category}`
-  //     );
-  //     setDaten(response.data.drinks);
-  //   };
-  //   {
-  //     category ? getCocktail() : null;
-  //   }
-  // }, [category]);
-
   return (
     <mainContext.Provider
       value={{
