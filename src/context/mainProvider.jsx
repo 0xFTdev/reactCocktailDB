@@ -9,6 +9,7 @@ const MainProvider = ({ children }) => {
   const [cocktail, setCocktail] = useState();
   const [category, setCategory] = useState();
   const [suche, setSuche] = useState("");
+  const [userCocktails, setUserCocktails] = useState([]);
 
   console.log(suche);
   console.log(daten);
@@ -50,10 +51,12 @@ const MainProvider = ({ children }) => {
         id,
         cocktail,
         suche,
+        userCocktails,
         setCategory,
         setCocktail,
         setId,
         setSuche,
+        setUserCocktails,
       }}
     >
       {children}

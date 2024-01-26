@@ -29,6 +29,9 @@ const Home = () => {
           <Link to="/cocktails/zufall">
             <button>Zufall</button>
           </Link>
+          <Link to="/add-cocktail">
+            <button>Add Cocktail</button>
+          </Link>
         </div>
       </main>
     </>
