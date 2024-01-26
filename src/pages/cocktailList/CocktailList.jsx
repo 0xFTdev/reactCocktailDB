@@ -3,6 +3,7 @@ import { mainContext } from "../../context/mainProvider";
 import { useParams } from "react-router-dom";
 import CocktailDetails from "../../components/cocktailDetails/CocktailDetails";
 import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 
 const CocktailList = () => {
   const { daten, category, setId, setCategory } = useContext(mainContext);
@@ -30,7 +31,6 @@ const CocktailList = () => {
                   />
                   <div className="card-body">
                     <h5 className="card-title">{cocktail.strDrink}</h5>
-                    {/* Use data-toggle and data-target to trigger the modal */}
                     <button
                       className="btn btn-primary"
                       onClick={() => setId(cocktail.idDrink)}
@@ -48,6 +48,7 @@ const CocktailList = () => {
           )}
         </div>
       </div>
+      <Footer />
     </>
   );
 };
