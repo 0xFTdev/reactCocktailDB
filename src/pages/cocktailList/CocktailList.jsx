@@ -9,7 +9,7 @@ const CocktailList = () => {
 
   useEffect(() => {
     setCategory(categories);
-  }, [daten]);
+  }, [categories]);
   return (
     <>
       <CocktailDetails />
