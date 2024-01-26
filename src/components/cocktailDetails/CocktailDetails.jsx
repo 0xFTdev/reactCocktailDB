@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { mainContext } from "../../context/mainProvider";
 import axios from "axios";
-import "./cocktailDetails.css";
 
 const CocktailDetails = () => {
   const { id, cocktail, setCocktail, setId } = useContext(mainContext);
