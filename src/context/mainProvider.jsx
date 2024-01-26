@@ -10,6 +10,9 @@ const MainProvider = ({ children }) => {
   const [category, setCategory] = useState();
   const [suche, setSuche] = useState("");
 
+  console.log(suche);
+  console.log(daten);
+
   useEffect(() => {
     const getCocktail = async () => {
       let url = "";

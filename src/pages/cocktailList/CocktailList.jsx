@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { mainContext } from "../../context/mainProvider";
 import { useParams } from "react-router-dom";
 import CocktailDetails from "../../components/cocktailDetails/CocktailDetails";
+import Header from "../../components/header/Header";
 
 const CocktailList = () => {
   const { daten, category, setId, setCategory } = useContext(mainContext);
@@ -12,6 +13,7 @@ const CocktailList = () => {
   }, [categories]);
   return (
     <>
+      <Header />
       <CocktailDetails />
       {daten ? (
         <>
