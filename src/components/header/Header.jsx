@@ -14,15 +14,24 @@ const Header = () => {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        value={suchInput}
-        onChange={(e) => setSuchInput(e.target.value)}
-        placeholder="Suche nach Cocktails ..."
-      />
-      <button onClick={suchen}>Suchen</button>
-    </div>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid">
+        <input
+          type="text"
+          value={suchInput}
+          onChange={(e) => setSuchInput(e.target.value)}
+          className="form-control me-2"
+          placeholder="Search for Cocktails ..."
+        />
+        <button
+          className="btn btn-outline-success"
+          type="button"
+          onClick={suchen}
+        >
+          Search
+        </button>
+      </div>
+    </nav>
   );
 };
 

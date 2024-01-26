@@ -11,28 +11,43 @@ const CocktailList = () => {
   useEffect(() => {
     setCategory(categories);
   }, [categories]);
+
   return (
     <>
       <Header />
       <CocktailDetails />
-      {daten ? (
-        <>
-          <h2>{category}</h2>
-          {daten.map((cocktail, index) => {
-            return (
-              <div key={index}>
-                <h3>{cocktail.strDrink}</h3>
-                <img src={cocktail.strDrinkThumb} />
-                <button onClick={() => setId(cocktail.idDrink)}>
-                  See Details
-                </button>
+      <div className="container">
+        <h2>{category}</h2>
+        <div className="row">
+          {daten ? (
+            daten.map((cocktail, index) => (
+              <div key={index} className="col-md-4 mb-3">
+                <div className="card">
+                  <img
+                    src={cocktail.strDrinkThumb}
+                    className="card-img-top"
+                    alt={cocktail.strDrink}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{cocktail.strDrink}</h5>
+                    {/* Use data-toggle and data-target to trigger the modal */}
+                    <button
+                      className="btn btn-primary"
+                      onClick={() => setId(cocktail.idDrink)}
+                      data-bs-toggle="modal"
+                      data-bs-target="#cocktailDetailModal"
+                    >
+                      See Details
+                    </button>
+                  </div>
+                </div>
               </div>
-            );
-          })}
-        </>
-      ) : (
-        <p>Loading ...</p>
-      )}
+            ))
+          ) : (
+            <p>Loading ...</p>
+          )}
+        </div>
+      </div>
     </>
   );
 };

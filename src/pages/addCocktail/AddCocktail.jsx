@@ -34,16 +34,21 @@ const AddCocktail = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Add your own Cocktail</h1>
       <form onSubmit={submitUserInput}>
-        <input
-          type="text"
-          value={formular.name}
-          onChange={(e) => setFormular({ ...formular, name: e.target.value })}
-          placeholder="Name"
-        />
-        <button type="submit">Submit</button>
+        <div className="mb-3">
+          <input
+            type="text"
+            value={formular.name}
+            onChange={(e) => setFormular({ ...formular, name: e.target.value })}
+            className="form-control"
+            placeholder="Name"
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
       </form>
     </div>
   );

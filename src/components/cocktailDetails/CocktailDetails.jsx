@@ -4,6 +4,7 @@ import axios from "axios";
 
 const CocktailDetails = () => {
   const { id, cocktail, setCocktail, setId } = useContext(mainContext);
+
   useEffect(() => {
     const getCocktail = async () => {
       const response = await axios.get(
@@ -11,29 +12,38 @@ const CocktailDetails = () => {
       );
       setCocktail(response.data.drinks);
     };
-    {
-      id ? getCocktail() : null;
+
+    if (id) {
+      getCocktail();
     }
-  }, [id]);
+  }, [id, setCocktail]);
+
   return (
     <>
-      {cocktail ? (
-        <div id="cocktailDetail" className="cocktailDetail">
-          <h2>{cocktail[0].strDrink}</h2>
-          <h3>Zutaten</h3>
-          <p>
-            {cocktail[0].strIngredient1} {cocktail[0].strMeasure1}
-          </p>
-          <button
-            onClick={() => {
-              setCocktail(null);
-              setId(null);
-            }}
-          >
-            Go Back!
-          </button>
+      {cocktail && (
+        <div className="modal" style={{ display: id ? "block" : "none" }}>
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">{cocktail[0].strDrink}</h5>
+              <button
+                className="close"
+                onClick={() => {
+                  setId(null);
+                  setCocktail(null);
+                }}
+              >
+                &times;
+              </button>
+            </div>
+            <div className="modal-body">
+              <h3>Zutaten</h3>
+              <p>
+                {cocktail[0].strIngredient1} {cocktail[0].strMeasure1}
+              </p>
+            </div>
+          </div>
         </div>
-      ) : null}
+      )}
     </>
   );
 };
