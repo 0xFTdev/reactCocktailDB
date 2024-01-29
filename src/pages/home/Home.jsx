@@ -80,6 +80,7 @@ const Home = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 };
