@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { mainContext } from "../../context/mainProvider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/cocktail.png";
 
 const Header = () => {
@@ -17,14 +17,16 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          <img
-            src={logo}
-            alt="Logo"
-            style={{ width: "3rem", marginRight: "0.3rem" }}
-          />
-          Drinkify™
-        </a>
+        <Link to="/">
+          <a className="navbar-brand" href="#">
+            <img
+              src={logo}
+              alt="Logo"
+              style={{ width: "3rem", marginRight: "0.3rem" }}
+            />
+            Drinkify™
+          </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
